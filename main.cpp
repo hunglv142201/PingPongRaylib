@@ -16,7 +16,7 @@ int main()
 {
     Vector2 winSize = {1200, 800};
 
-    Ball ball = {{winSize.x / 2, winSize.y / 2}, winSize.y / 30, 400};
+    Ball ball = {{winSize.x / 2, winSize.y / 2}, winSize.y / 30, 500};
 
     float padLength = winSize.y / 4;
     Paddle player = {{winSize.x - padLength / 8 - 20, winSize.y / 2 - padLength / 2}, padLength, 300, winSize};
@@ -39,8 +39,8 @@ int main()
         ai.draw();
         ball.draw();
 
-        DrawText(TextFormat("%i", aiScore), winSize.x / 4, 10, 32, RAYWHITE);
-        DrawText(TextFormat("%i", playerScore), winSize.x * 3 / 4, 10, 32, RAYWHITE);
+        DrawText(TextFormat("%i", aiScore), winSize.x / 4, 10, 52, RAYWHITE);
+        DrawText(TextFormat("%i", playerScore), winSize.x * 3 / 4, 10, 52, RAYWHITE);
 
         DrawFPS(10, 10);
 
@@ -76,8 +76,8 @@ void checkBallCollision(Ball& ball, Paddle& player, AiPaddle& ai, const Vector2&
                                 {player.pos.x, player.pos.y, player.length / 8, player.length}) ||
         CheckCollisionCircleRec(ball.pos, ball.radius, {ai.pos.x, ai.pos.y, ai.length / 8, ai.length}))
     {
-        ball.velocity.x *= -1.2;
-        ball.velocity.y *= 1.2;
+        ball.velocity.x *= -1.1;
+        ball.velocity.y *= 1.1;
     }
 
     if (ball.pos.x + ball.radius < 0)
