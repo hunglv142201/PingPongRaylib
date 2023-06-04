@@ -14,13 +14,13 @@ void checkBallCollision(Ball& ball, Paddle& player, AiPaddle& ai, const Vector2&
 
 int main()
 {
-    Vector2 winSize = {480, 320};
+    Vector2 winSize = {1200, 800};
 
     Ball ball = {{winSize.x / 2, winSize.y / 2}, winSize.y / 30, 400};
 
     float padLength = winSize.y / 4;
-    Paddle player = {{winSize.x - padLength / 8 - 20, winSize.y / 2 - padLength / 2}, padLength, 200, winSize};
-    AiPaddle ai = {{20, winSize.y / 2 - padLength / 2}, padLength, 200, &ball.pos, winSize};
+    Paddle player = {{winSize.x - padLength / 8 - 20, winSize.y / 2 - padLength / 2}, padLength, 300, winSize};
+    AiPaddle ai = {{20, winSize.y / 2 - padLength / 2}, padLength, 300, &ball.pos, winSize};
 
     InitWindow(winSize.x, winSize.y, "Ping Pong");
 
